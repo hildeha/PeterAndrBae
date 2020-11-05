@@ -9,20 +9,6 @@ import base64
 def main():
     st.set_option('deprecation.showfileUploaderEncoding', False)
 
-    #file_ = open("Gifs/oie_oie_animation.gif", "rb")
-    #contents = file_.read()
-    #data_url = base64.b64encode(contents).decode("utf-8")
-    #file_.close()
-
-    #st.markdown(
-    #    f'<img src="data:image/gif;base64,{data_url}" alt="cat gif">',
-    #    unsafe_allow_html=True,
-    #)
-
-    #st.markdown('<h1 style="text-align:center;"><img src={local_gif"/Gifs/venstre.gif"}></h1>', unsafe_allow_html=True)
-
-    st.set_page_config(layout='centered')
-
     st.image('Gifs/combined.gif', use_column_width=True)
     st.image('Gifs/pete.gif', use_column_width=True)
     st.image('Gifs/combined.gif', use_column_width=True)
