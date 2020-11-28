@@ -1,4 +1,4 @@
-# PeterAndrBae
+# PeterAndrBae [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/hildeha/peterandrbae/main/peterandrbae.py)
 
 Combined test of streamilts share functionality and a tribute app to singer Peter Andre.
 
