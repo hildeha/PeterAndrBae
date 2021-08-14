@@ -49,11 +49,11 @@ def main():
 
         # extracted_faces = extract_face_from_image(image, faces)
         if len([x for x in boolean if x is True]) > 0:
-            st.markdown('<h2 style="text-align:center;"> AND <span style="color:#FFCD33"> {} </span> '
-                        'IS OF PETE!!!</h2> '.format(len([x for x in boolean if x is True])), unsafe_allow_html=True)
+            st.markdown('<h2 style="text-align:center;"> and {} '
+                        'is if Pete!</h2> '.format(len([x for x in boolean if x is True])), unsafe_allow_html=True)
         else:
-            st.markdown('<h2 style="text-align:center;"> ..and  <span style="color:blue"> none </span> '
-                        'is of Pete. Boo. You shoudl reconsider your taste in pictures.<h2> ', unsafe_allow_html=True)
+            st.markdown('<h2 style="text-align:center;"> ..and none '
+                        'is of Pete. Boo. You should reconsider your taste in pictures.<h2> ', unsafe_allow_html=True)
 
         st.pyplot(fig)
 
