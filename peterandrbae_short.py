@@ -9,9 +9,9 @@ import base64
 def main():
     st.set_option('deprecation.showfileUploaderEncoding', False)
 
-    st.markdown('<h2 style="text-align:center;"> <span style="color:#F633FF"> Make sure you have enough Peter André '
+    st.markdown('<h2 style="text-align:center;"> Make sure you have enough Peter André '
                 'in your life <br><br>Upload a pic and see if Pete is in it!'
-                '</span> 👏 </h2> ', unsafe_allow_html=True)
+                ' 👏 </h2> ', unsafe_allow_html=True)
 
 
 
@@ -53,7 +53,7 @@ def main():
                         'IS OF PETE!!!</h2> '.format(len([x for x in boolean if x is True])), unsafe_allow_html=True)
         else:
             st.markdown('<h2 style="text-align:center;"> ..and  <span style="color:blue"> none </span> '
-                        'is of Pete. Boo. That picture sucks.<h2> ', unsafe_allow_html=True)
+                        'is of Pete. Boo. You shoudl reconsider your taste in pictures.<h2> ', unsafe_allow_html=True)
 
         st.pyplot(fig)
 
