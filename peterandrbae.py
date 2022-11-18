@@ -7,6 +7,7 @@ import base64
 
 
 def main():
+    st.set_page_config(page_title='PeterAndrBae, page_icon='Gifs/peter_andre_icon.ico')
     st.set_option('deprecation.showfileUploaderEncoding', False)
 
     st.image('Gifs/combined.gif', use_column_width=True)
