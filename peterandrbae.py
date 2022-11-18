@@ -48,49 +48,54 @@ def main():
     help.newLine(lines=3)
 
     #picture = st.file_uploader(label='Picture goes here')
+    
+    try:
 
-    picture = st.file_uploader(label='Picture goes here', type=['png', 'jpg', 'jpeg'])
-    if picture is not None:
-
-
-        #image = Image.read(picture)
-        img = Image.open(picture)
-        image = np.asarray(img)
+        picture = st.file_uploader(label='Picture goes here', type=['png', 'jpg', 'jpeg'])
+        if picture is not None:
 
 
-        # DETECT FACES
-
-        detector = Detection.get_detector()
-        img_faces = Detection.extract_face_from_image(image, detector)
-
-        petes = Detection.get_petes(detector)
-        boolean = Detection.find_pete(petes, image, detector)
-
-        fig = Detection.highlight_faces_bool(image, detector, boolean)
-
-        if len(img_faces) > 1:
-            st.markdown('<h2 style="text-align:center;"> There are <span style="color:#F633FF"> {} </span> '
-                        'faces in '
-                        'your picture! </h2> '.format(len(img_faces)), unsafe_allow_html=True)
-
-        if len(img_faces) == 1:
-            st.markdown('<h2 style="text-align:center;"> There is <span style="color:#F633FF"> {} </span> '
-                        'face in '
-                        'your picture! </h2> '.format(len(img_faces)), unsafe_allow_html=True)
+            #image = Image.read(picture)
+            img = Image.open(picture)
+            image = np.asarray(img)
 
 
-        # extracted_faces = extract_face_from_image(image, faces)
-        if len([x for x in boolean if x is True]) > 0:
-            st.markdown('<h2 style="text-align:center;"> AND <span style="color:#FFCD33"> {} </span> '
-                        'IS OF PETEEEEYYYY!!!</h2> '.format(len([x for x in boolean if x is True])), unsafe_allow_html=True)
-        else:
-            st.markdown('<h2 style="text-align:center;"> ..and  <span style="color:blue"> none </span> '
-                        'is of Pete. Boo. That picture sucks.<h2> ', unsafe_allow_html=True)
+            # DETECT FACES
 
-        st.pyplot(fig)
+            detector = Detection.get_detector()
+            img_faces = Detection.extract_face_from_image(image, detector)
 
-        if len([x for x in boolean if x is True]) > 0:
-            st.balloons()
+            petes = Detection.get_petes(detector)
+            boolean = Detection.find_pete(petes, image, detector)
+
+            fig = Detection.highlight_faces_bool(image, detector, boolean)
+
+            if len(img_faces) > 1:
+                st.markdown('<h2 style="text-align:center;"> There are <span style="color:#F633FF"> {} </span> '
+                            'faces in '
+                            'your picture! </h2> '.format(len(img_faces)), unsafe_allow_html=True)
+
+            if len(img_faces) == 1:
+                st.markdown('<h2 style="text-align:center;"> There is <span style="color:#F633FF"> {} </span> '
+                            'face in '
+                            'your picture! </h2> '.format(len(img_faces)), unsafe_allow_html=True)
+
+
+            # extracted_faces = extract_face_from_image(image, faces)
+            if len([x for x in boolean if x is True]) > 0:
+                st.markdown('<h2 style="text-align:center;"> AND <span style="color:#FFCD33"> {} </span> '
+                            'IS OF PETEEEEYYYY!!!</h2> '.format(len([x for x in boolean if x is True])), unsafe_allow_html=True)
+            else:
+                st.markdown('<h2 style="text-align:center;"> ..and  <span style="color:blue"> none </span> '
+                            'is of Pete. Boo. That picture sucks.<h2> ', unsafe_allow_html=True)
+
+            st.pyplot(fig)
+
+            if len([x for x in boolean if x is True]) > 0:
+                st.balloons()
+    except:
+        print('upload a picture of one or several person(s) of type jpg/jpeg')
+            
 
 
 if __name__ == "__main__":
