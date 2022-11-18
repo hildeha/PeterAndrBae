@@ -94,7 +94,7 @@ def main():
             if len([x for x in boolean if x is True]) > 0:
                 st.balloons()
     except:
-        print('upload a picture of one or several person(s) of type jpg/jpeg')
+        st.write('upload a picture of one or several person(s) of type jpg/jpeg')
             
 
 
